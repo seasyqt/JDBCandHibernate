@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" >
+  <Properties>
+    <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] - %msg%n</Property>
+    <Property name="APP_LOG_ROOT">/logs</Property>
+  </Properties>
+  <appenders>
+    <File name="exceptionError" fileName="${APP_LOG_ROOT}/exceptionErrors.log">
+      <PatternLayout pattern="${LOG_PATTERN}"/>
+    </File>
+  </appenders>
+
+  <loggers>
+    <root level="debug">
+      <appender-ref ref="exceptionError" level="error"/>
+    </root>
+  </loggers>
+</configuration>
